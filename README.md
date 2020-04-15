@@ -30,6 +30,42 @@ The model has been trained with a set of data representing the board status resp
 1,0,1,0,1,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,1,1,1,0,1
 1,0,1,0,1,1,0,0,0,0,1,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,1
 ```
+## Model Training
+Model training has been done in different ways to check whether some improvements in performance may be achieved just by different training. The code for the model training is reported below. Many different models have been obtained changing either epochs or batch_size or both, sometimes leading to training sessions of more than 12 hours. Nevertheless no dramatic improvements were shown after that, compared to the ones from the basic training. 
+```
+model.fit(
+    X_train,
+    y_train,
+    epochs=1000,
+    batch_size=32,
+    validation_data=(X_test, y_test),
+    callbacks=[tensorboard_callback],
+)
+```
+## Performance Evaluation
+Although the AI (which always moves first) behaves well on the opening, almost always choosing the center square, it declines on choice quality in the subsequent moves.
+```
+-|-|-
+-----
+-|X|-
+-----
+-|-|-
+Enter move (1-9):
+```
+For example, an easy win on the third move is spoiled by the silly positioning on the 9th square.
+```
+O|O|-
+-----
+-|X|X
+-----
+-|-|X
+Enter move (1-9):
+```
+At the current stage the model definitely underperforms and there's no way for the AI to win a game unless the human player does one or even more very bad moves.
+## A note on possible future improvements
+Some improvements may be achieved modifiyng the model, trying different optimizers and loss functions. Bu the most important one it would be training the neural network through a Monte Carlo Tree Search algorithm and adjusting the model's weight accordingly.
 
+## License
+MIT License
 
 
