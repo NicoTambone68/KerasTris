@@ -63,7 +63,10 @@ Enter move (1-9):
 ```
 At the current stage the model definitely underperforms and there's no way for the AI to win a game unless the human player does one or even more very bad moves.
 ## A note on possible future improvements
-Some improvements may be achieved modifiyng the model, trying different optimizers and loss functions. Bu the most important one it would be training the neural network through a Monte Carlo Tree Search algorithm and adjusting the model's weight accordingly.
+Some improvements may be achieved modifiyng the model, trying different optimizers and loss functions. But the most important one it would be training the neural network through a Monte Carlo Tree Search algorithm and adjusting the model's weight accordingly.
+
+## Conclusions
+C# can be used proficiently with TensorFlow.NET to build AI applications (beside native AI functionalities, which have however, limited features compared to the ones of TensorFlow). Nevertheless at this stage, the present application needs to be improved to show its actual potentiality.
 
 ## License
 MIT License
