@@ -11,7 +11,7 @@ The project classes and their relative MVC section are shown in the following di
 
 ## Neural Network Architecture
 As said before, the neural network's implementation is currently outside this project. KerasTris merely import a trained model developed in Python. The code of the model is reported here for reference.
-`
+```
 model = tf.keras.Sequential()
 model.add(tf.keras.layers.Dense(128, activation="relu", input_dim=X.shape[1]))
 model.add(tf.keras.layers.Dropout(0.3))
@@ -22,14 +22,14 @@ model.add(tf.keras.layers.Dropout(0.3))
 model.add(tf.keras.layers.Dense(moves.shape[1], activation="softmax"))
 
 model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
-`
+```
 ## Training Data
 The model has been trained with a set of data representing the board status respectively for player a, player b, unselected cells, turn and score. The dataset was made of about 4500 records of a csv file. An example of the training data is shown below.
-`
+```
 1,0,1,0,1,0,0,1,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,1,1
 1,0,1,0,1,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,1,1,1,0,1
 1,0,1,0,1,1,0,0,0,0,1,0,1,0,0,1,1,0,0,0,0,0,0,0,0,0,1,0,1
-`
+```
 
 
 
