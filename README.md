@@ -1,7 +1,7 @@
 # KerasTris
 A neural network plays a tic-tac-toe game implemented in C# and TensorFlow.NET
 
-## Overview
+## Overview and specification
 KerasTris is a C# console application written to experiment with neural network models. It allows an human player to play tic-tac-toe against an AI driven opponent. The model of the neural network which enables the AI opponent is prebuilt and pretrained. It was originated by an external application (not included in this project) written in Python with Keras libraries and it is loaded in the application at runtime. Also this project is a benchwork for experimenting with TensorFlow.NET and Keras.NET.
 
 ## Problem Analysis
@@ -57,7 +57,7 @@ After compiling the code, the program can be launched just by running its execut
 
 An UML diagram of the use cases is included here for reference.
 
-![KerasTris UML Use Cases](/KerasTrisUMLUseCases.png)
+![KerasTris UML Use Cases](/KerasTrisUMLUseCase.png)
 
 ## Performance Evaluation
 Although the AI (which always moves first) behaves well on the opening, almost always choosing the center square, it declines on choice quality in the subsequent moves.
@@ -79,6 +79,7 @@ O|O|-
 Enter move (1-9):
 ```
 At the current stage the model definitely underperforms and there's no way for the AI to win a game unless the human player does one or even more very bad moves.
+
 ## A note on possible future improvements
 Some improvements may be achieved modifiyng the model, trying different optimizers and loss functions. But the most important one it would be training the neural network through a Monte Carlo Tree Search algorithm and adjusting the model's weight accordingly.
 
