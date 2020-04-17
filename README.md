@@ -10,12 +10,11 @@ The application must provide a suitable user interface to represent the game boa
 As for the algorithmic solution, many ways were possible. Since the tic-tac-toe game has a finite number of states and the universe of possible games is limited to something more than two hundred thousands, we may well have chosen an algorithm like minimax. Nevertheless we wanted to explore the possibilities of a simple Machine Learning model and cope with an unusual approach to a computational problem. 
 
 ## Overall Architecture
-Although the complexity of the application is far from overwhelming, its architecture is heavily object-oriented and it is based on the MVC (Model-View-Controller) paradigm. Thus the project is grouped into three main components: a Model which encapsulates the states and the internal representation of the game, a View which organizes the visual representation of the game board, and the Controller, which gets the user input, interprets it and passes it to the Model. This allows for an abstract representation of the program, easing the maintainance and future improvements. The current simple console application may be improved, for example, by adding a graphical interface and thus implementing new code in the Controller and View sections, without worrying about the game engine.
+Although the complexity of the application is far from overwhelming, its architecture is heavily object-oriented and it is based on the MVC (Model-View-Controller) design pattern. Thus the project is grouped into three main components: a Model which encapsulates the states and the internal representation of the game, a View which organizes the visual representation of the game board, and the Controller, which gets the user input, interprets it and passes it to the Model. This allows for an abstract representation of the program, easing the maintainance and future improvements. Thus the implementation decouples the game abstract functionalities from their graphical representation and their actual input controls. The current simple console application may be improved, for example, by adding a graphical interface and thus implementing new code in the Controller and View sections, but leaving the game engine untouched. In the same way we may add new input devices, other than the keyboard, for example a mouse or a gamepad.
 
 The project classes and their relative MVC section are shown in the following UML classes diagram.
 
 ![KerasTris UML Diagram](/KerasTrisUMLDiagram.png)
-Format: ![Alt Text](https://github.com/NicoTambone68/KerasTris/blob/master/KerasTrisUMLDiagram.png)
 
 
 ## Neural Network Architecture
@@ -51,6 +50,15 @@ model.fit(
     callbacks=[tensorboard_callback],
 )
 ```
+## Running the program
+After compiling the code, the program can be launched just by running its executable, e.g.  KerasTris.exe  (on Windows). No parameters are required. The AI will always make the first move. To play the game is very intuitive: just enter a number from 1 to 9 which correspond to the cell you want to mark with a nought. 1 is the cell in the upper-left corner; 9 is the one in the lower-right corner. The user may choose to end the game at any time, just entering 'q' (for quit).
+
+## Use cases
+
+An UML diagram of the use cases is included here for reference.
+
+![KerasTris UML Use Cases](/KerasTrisUMLUseCases.png)
+
 ## Performance Evaluation
 Although the AI (which always moves first) behaves well on the opening, almost always choosing the center square, it declines on choice quality in the subsequent moves.
 ```
@@ -80,4 +88,5 @@ C# can be used proficiently with TensorFlow.NET to build AI applications (beside
 ## License
 MIT License
 
-
+## Author 
+Nicolò Tambone 267259
