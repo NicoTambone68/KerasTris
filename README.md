@@ -4,10 +4,19 @@ A neural network plays a tic-tac-toe game implemented in C# and TensorFlow.NET
 ## Overview
 KerasTris is a C# console application written to experiment with neural network models. It allows an human player to play tic-tac-toe against an AI driven opponent. The model of the neural network which enables the AI opponent is prebuilt and pretrained. It was originated by an external application (not included in this project) written in Python with Keras libraries and it is loaded in the application at runtime. Also this project is a benchwork for experimenting with TensorFlow.NET and Keras.NET.
 
+## Problem Analysis
+The application must provide a suitable user interface to represent the game board and receive input from the user. Moreover it must implement a game engine to act as the opponent to the human player. No specifications have been given about the user interface, so our choice is to keep everything as simple as possible. Thus the interface will be a simple character console. Nevertheless an object-oriented architecture will be implemented wisely in order to ease future improvements that will include a graphical interface. 
+
+As for the algorithmic solution, many ways were possible. Since the tic-tac-toe game has a finite number of states and the universe of possible games is limited to something more than two hundred thousands, we may well have chosen an algorithm like minimax. Nevertheless we wanted to explore the possibilities of a simple Machine Learning model and cope with an unusual approach to a computational problem. 
+
 ## Overall Architecture
 Although the complexity of the application is far from overwhelming, its architecture is heavily object-oriented and it is based on the MVC (Model-View-Controller) paradigm. Thus the project is grouped into three main components: a Model which encapsulates the states and the internal representation of the game, a View which organizes the visual representation of the game board, and the Controller, which gets the user input, interprets it and passes it to the Model. This allows for an abstract representation of the program, easing the maintainance and future improvements. The current simple console application may be improved, for example, by adding a graphical interface and thus implementing new code in the Controller and View sections, without worrying about the game engine.
 
-The project classes and their relative MVC section are shown in the following diagram.
+The project classes and their relative MVC section are shown in the following UML classes diagram.
+
+![KerasTris UML Diagram](/KerasTrisUMLDiagram.png)
+Format: ![Alt Text](https://github.com/NicoTambone68/KerasTris/blob/master/KerasTrisUMLDiagram.png)
+
 
 ## Neural Network Architecture
 As said before, the neural network's implementation is currently outside this project. KerasTris merely import a trained model developed in Python. The code of the model is reported here for reference.
